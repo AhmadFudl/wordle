@@ -1,0 +1,233 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* a nice font that uses a user's built in font */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  color: #333;
+}
+
+.sec-ab {
+  display: flex;
+  flex-direction: column;
+}
+
+.sec-ab > div {
+  padding-top: 20px;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  border-top: 2px solid #333;
+  padding-bottom: 10px;
+}
+
+.about:first-child {
+  border-top: none;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 2px solid #333;
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.navbar > a {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.index {
+  display: grid;
+  row-gap: 75px;
+}
+
+.scoreboard {
+  max-width: 400px;
+  width: 100%;
+  margin: 10px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 5px;
+}
+
+.ab-score {
+  margin: 10px;
+}
+
+.scoreboard-letter {
+  height: 65px;
+  width: 65px;
+  font-size: 30px;
+  text-transform: uppercase;
+  border: 3px solid #ccc;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  row-gap:10px;
+}
+
+.row {
+  max-width: 510px;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.my-Key {
+    font-weight: bold;
+    border: 0;
+    padding: 0;
+    margin: 0 6px 0 0;
+    height: 50px;
+    width:45px;
+    border-radius: 4px;
+    cursor: pointer;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.Return {
+  padding-left: 10px;
+  padding-right: 10px;
+  width: auto;
+  max-width: 75px;
+}
+
+.Esc {
+  padding-left: 10px;
+  padding-right: 10px;
+  width: auto;
+  max-width: 50px;
+}
+
+button {
+  margin:0px;
+  padding:0px;
+}
+
+.correct {
+  background-color: darkgreen;
+  color: white;
+}
+
+.close {
+  background-color: goldenrod;
+  color: white;
+}
+
+.wrong {
+  background-color: #888;
+  color: white; 
+}
+
+.invalid {
+  animation: flash 1s;
+}
+
+/* flashes red border and then fades back to gray */
+@keyframes flash {
+  5% {
+    border-color: crimson;
+  }
+
+  100% {
+    border-color: #ccc;
+  }
+}
+
+.spiral {
+  font-size: 40px;
+  animation: spin 1.5s linear infinite;
+}
+
+/* rotates clockwise indefinitely */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* visibility hidden means the item is still there and taking up space
+   but just not shown. display: none doesn't take up space */
+.hidden {
+  visibility: hidden;
+}
+
+.info-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* winner animation */
+
+@keyframes rainbow {
+  100%,
+  0% {
+    color: rgb(255, 0, 0);
+  }
+  8% {
+    color: rgb(255, 127, 0);
+  }
+  16% {
+    color: rgb(255, 255, 0);
+  }
+  25% {
+    color: rgb(127, 255, 0);
+  }
+  33% {
+    color: rgb(0, 255, 0);
+  }
+  41% {
+    color: rgb(0, 255, 127);
+  }
+  50% {
+    color: rgb(0, 255, 255);
+  }
+  58% {
+    color: rgb(0, 127, 255);
+  }
+  66% {
+    color: rgb(0, 0, 255);
+  }
+  75% {
+    color: rgb(127, 0, 255);
+  }
+  83% {
+    color: rgb(255, 0, 255);
+  }
+  91% {
+    color: rgb(255, 0, 127);
+  }
+}
+
+.winner {
+  animation: rainbow 4s infinite linear;
+}
