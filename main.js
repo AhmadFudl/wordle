@@ -178,13 +178,13 @@ async function init() {
     if (done || isLoading) {
       return;
     }
-      if (event.path[0].type == "button") {
-      if (event.path[0].innerText === "RETURN") {
+    if (event.composedPath()[0].type == "button") {
+      if (event.composedPath()[0].innerText === "RETURN") {
         commit();
-      } else if (event.path[0].innerText === "ESC") {
+      } else if (event.composedPath()[0].innerText === "ESC") {
         backspace();
-      } else if (isLetter(event.path[0].innerText)) {
-        addLetter(event.path[0].innerText);
+      } else if (isLetter(event.composedPath()[0].innerText)) {
+        addLetter(event.composedPath()[0].innerText);
       }
     }
   });
